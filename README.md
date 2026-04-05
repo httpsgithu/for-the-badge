@@ -1,95 +1,143 @@
-<picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://forthebadge.com/images/logo.svg">
-   <source media="(prefers-color-scheme: light)" srcset="https://forthebadge.com/images/logo_black.svg">
-   <img alt="forthebadge logo" src="https://forthebadge.com/images/logo.svg" style="max-width: 100%; height: auto;">
-</picture>
+# For the Badge
 
-## Looking to submit a badge to be hosted on our site?
+[![Built with Nuxt](https://img.shields.io/badge/Built%20with-Nuxt-00DC82?style=flat-square&logo=nuxt.js)](https://nuxt.com)
+[![Deployed on Cloudflare](https://img.shields.io/badge/Deployed%20on-Cloudflare-F38020?style=flat-square&logo=cloudflare)](https://workers.cloudflare.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Open Collective](https://img.shields.io/badge/Open%20Collective-Support%20Us-7FADF2?style=flat-square&logo=opencollective)](https://opencollective.com/forthebadge)
 
-To submit a badge, simply visit [our official generator](https://forthebadge.com/#/generator) create the badge and click "Submit to Approval". Once approved, it joins our collection for all to use. We allow both signed-in and non-signed-in users to submit badges for approval. Signed-in users have the added benefit of tracking the approval status of their submissions.
+**Badges for badges' sake.**
 
-## For standard users
+🌐 **Live Site:** [forthebadge.com](https://forthebadge.com)
 
-To explore our unique collection and generate badges, simply visit [our official website](https://forthebadge.com). Our site is designed to enrich your experience with an array of features and services, all dedicated to badges.
+## Features
 
-## For advanced users
+- 🎨 **Custom Badge Creator** - Design badges with custom text, colors, and icons
+- 📦 **Pre-made Badges** - Browse a library of ready-to-use badges
+- 🏆 **Developer Awards** - Earn and display achievement badges
+- 👤 **User Accounts** - Save and manage your badge collections
+- 🔗 **Easy Sharing** - Copy badge URLs or download as images
 
-We have open-sourced our badge generator so you can self-host and run our classic generator! It all started with our obsession for badges, and it ends with badges for badges' sake.
+## Tech Stack
 
-We have posted a tutorial on our youtube channel that walks through how to setup this project, [you can view it here](https://www.youtube.com/watch?v=fIKNEauzU-g)
+- **Framework:** [Nuxt 4](https://nuxt.com) (Vue 3)
+- **Deployment:** [Cloudflare Workers](https://workers.cloudflare.com) via [NuxtHub](https://hub.nuxt.com)
+- **Database:** [Cloudflare D1](https://developers.cloudflare.com/d1/) (SQLite)
+- **KV Storage:** [Cloudflare KV](https://developers.cloudflare.com/kv/)
+- **ORM:** [Drizzle ORM](https://orm.drizzle.team)
+- **Auth:** [nuxt-auth-utils](https://github.com/Atinux/nuxt-auth-utils)
+- **Security:** [nuxt-security](https://nuxt-security.vercel.app)
 
-A hosted verison of this open source generator [can be found here](https://generator.forthebadge.com)
+## Getting Started
 
-### Running Locally
+### Prerequisites
 
-To run For the Badge on your local computer, follow these simple steps:
+- [Node.js](https://nodejs.org/) 22+
+- [Yarn](https://yarnpkg.com/) (via Corepack)
+- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/) (for Cloudflare deployment)
 
-1. Clone the repository:
+### Installation
 
+```bash
+# Enable Corepack for Yarn
+corepack enable
+
+# Clone the repository
+git clone https://github.com/forthebadge/for-the-badge.git
+cd for-the-badge
+
+# Install dependencies
+yarn install
+
+# Copy environment variables
+cp .env.example .env
+# Edit .env with your values
+```
+
+### Development
+
+```bash
+# Start development server
+yarn dev
+```
+
+The app will be available at `http://localhost:3000`.
+
+### Building
+
+```bash
+# Build for production
+yarn build
+
+# Preview production build locally
+yarn preview
+```
+
+## Configuration
+
+### Environment Variables
+
+See [`.env.example`](.env.example) for all available configuration options.
+
+**Required variables:**
+- `NUXT_SESSION_PASSWORD` - Session encryption password
+- `PASSWORD_PEPPER` - Additional password hashing security
+- `ACCOUNT_HMAC_SECRET` - HMAC secret for account operations
+- `BADGE_ENCRYPTION_KEY` - Encryption key for badge data
+- `REFERRAL_SQIDS_ALPHABET` - Alphabet for generating referral IDs
+
+### Cloudflare Setup
+
+1. Create a D1 database:
+   ```bash
+   wrangler d1 create forthebadge
    ```
-   git clone https://github.com/forthebadge/for-the-badge.git
-   cd for-the-badge
+
+2. Create a KV namespace:
+   ```bash
+   wrangler kv:namespace create KV
    ```
 
-2. Install the project dependencies using npm:
+3. Update `wrangler.jsonc` with your database and KV IDs
 
-   ```
-   npm install
-   ```
-
-3. Start the local server using Vite:
-
-   ```
-   npx vite
-   ```
-
-4. The badge generator will be available at `http://localhost:5173`. You can access it through your web browser.
-
-5. To build the project for production:
-   ```
-   npx vite build
+4. Set secrets:
+   ```bash
+   wrangler secret put NUXT_SESSION_PASSWORD
+   wrangler secret put PASSWORD_PEPPER
+   wrangler secret put ACCOUNT_HMAC_SECRET
+   wrangler secret put BADGE_ENCRYPTION_KEY
+   wrangler secret put REFERRAL_SQIDS_ALPHABET
    ```
 
-### Using Docker
+## Scripts
 
-You can run For the Badge using Docker in two different ways. Choose the method that best suits your needs:
+| Command | Description |
+|---------|-------------|
+| `yarn dev` | Start development server |
+| `yarn build` | Build for production |
+| `yarn preview` | Preview production build |
+| `yarn test` | Run tests |
+| `yarn test:coverage` | Run tests with coverage |
+| `yarn db:generate` | Generate database migrations |
+| `yarn security:check` | Run security audits |
 
-#### Method 1: Pull and Run the Docker Image
+## Contributing
 
-Use this method if you want to quickly run the latest stable version of For the Badge without building it yourself.
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-1. Pull the Docker image from our repository:
+## Security
 
-   ```
-   docker pull forthebadge/forthebadge
-   ```
-
-2. Run the Docker image:
-   ```
-   docker run -p 8080:8080 forthebadge/forthebadge
-   ```
-
-#### Method 2: Build and Run the Docker Image Yourself
-
-This method is ideal if you have downloaded the source code and wish to build the Docker image yourself, perhaps for development or testing purposes.
-
-1. Build the Docker image:
-
-   ```
-   docker build -t for-the-badge .
-   ```
-
-2. Run the Docker image:
-   ```
-   docker run -p 8080:8080 for-the-badge
-   ```
-
-Regardless of the method chosen, The badge generator will be available at `http://localhost:8080`. You can access it through your web browser.
-
-### Want to Contribute?
-
-Contributions are welcome and keep this project going! If you'd like to contribute, please fork the repository, make your changes, and submit a pull request. Your contributions may be featured on our official site!
+For security concerns, please see [SECURITY.md](SECURITY.md).
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 - see the [COPYING](https://github.com/forthebadge/for-the-badge/blob/master/COPYING) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you find For the Badge useful, consider supporting us on [Open Collective](https://opencollective.com/forthebadge).
+
+## Acknowledgments
+
+- Original [For the Badge](https://forthebadge.com) concept
+- All our [contributors](https://github.com/forthebadge/for-the-badge/graphs/contributors)
+- The Nuxt and Cloudflare communities

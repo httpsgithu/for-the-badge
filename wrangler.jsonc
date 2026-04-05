@@ -1,0 +1,48 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "forthebadge",
+	"main": "./dist/server/index.mjs",
+	"compatibility_date": "2025-07-15",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"assets": {
+		"directory": "./dist/public/",
+		"binding": "ASSETS"
+	},
+	"observability": {
+		"enabled": true
+	},
+	// Create your D1 database: wrangler d1 create forthebadge
+	// Then update the database_id below
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_id": "YOUR_D1_DATABASE_ID"
+		}
+	],
+	// Create your KV namespace: wrangler kv:namespace create KV
+	// Then update the id below
+	"kv_namespaces": [
+		{
+			"binding": "KV",
+			"id": "YOUR_KV_NAMESPACE_ID"
+		}
+	],
+	// Configure your custom domain (optional)
+	// "routes": [
+	// 	{
+	// 		"pattern": "yourdomain.com",
+	// 		"zone_name": "yourdomain.com",
+	// 		"custom_domain": true
+	// 	}
+	// ],
+	// Secrets should be set via: wrangler secret put SECRET_NAME
+	// Required secrets:
+	// - ACCOUNT_HMAC_SECRET
+	// - BADGE_ENCRYPTION_KEY
+	// - NUXT_SESSION_PASSWORD
+	// - PASSWORD_PEPPER
+	// - REFERRAL_SQIDS_ALPHABET
+	"vars": {}
+}

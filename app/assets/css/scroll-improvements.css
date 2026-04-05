@@ -1,0 +1,186 @@
+/* Global scroll improvements */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Account for fixed headers/navbars */
+}
+
+/* Smooth focus transitions */
+*:focus {
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  scroll-margin-top: 100px;
+}
+
+/* Improved scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus management - ensure focused elements are visible */
+.focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth animations for UI state changes */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.slide-enter-from {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.slide-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+/* Ensure modal/dropdown content doesn't affect page scroll */
+.modal-open {
+  overflow: hidden;
+}
+
+/* Better scroll anchoring for dynamic content */
+.content-container {
+  overflow-anchor: auto;
+}
+
+/* Smooth height transitions for expanding/collapsing content */
+.expandable-content {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.expandable-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Improved button focus and hover states */
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+/* Better link hover states */
+a {
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+/* Smooth loading states */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Scroll snap for better mobile experience */
+.scroll-container {
+  scroll-snap-type: y proximity;
+}
+
+.scroll-item {
+  scroll-snap-align: start;
+  scroll-margin-top: 80px;
+}
+
+/* Better touch scrolling on mobile */
+.scrollable {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+/* Prevent scroll jumping on content changes */
+.stable-scroll {
+  overflow-anchor: auto;
+}
+
+/* Better visual feedback for interactive elements */
+.interactive:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+.interactive:active {
+  transform: translateY(0);
+}
+
+/* Ensure form validation messages don't jump */
+.form-field {
+  min-height: fit-content;
+  transition: min-height 0.2s ease;
+}
+
+.form-error {
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

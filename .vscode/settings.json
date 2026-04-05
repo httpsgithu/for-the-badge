@@ -1,0 +1,43 @@
+{
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    //"editor.formatOnSave": true,
+    // "editor.codeActionsOnSave": {
+    //     "source.fixAll.eslint": "explicit"
+    // },
+    "editor.tabSize": 4,
+    //"editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        //"editor.formatOnSave": true,
+        "editor.tabSize": 4
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        //"editor.formatOnSave": true,
+        "editor.tabSize": 4
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        //"editor.formatOnSave": true,
+        "editor.tabSize": 4
+    },
+    "[json]": {
+        "editor.tabSize": 4
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue"
+    ],
+    "eslint.useFlatConfig": true,
+    "eslint.format.enable": true,
+    "eslint.runtime": "node",
+    "eslint.options": {
+        "overrideConfigFile": "eslint.config.mjs"
+    },
+    "typescript.preferences.quoteStyle": "double",
+    "javascript.preferences.quoteStyle": "double",
+}

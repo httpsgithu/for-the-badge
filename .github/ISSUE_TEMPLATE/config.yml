@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security Vulnerability
+    url: https://github.com/forthebadge/forthebadge/security/advisories/new
+    about: Report security vulnerabilities privately
+  - name: Questions & Support
+    url: https://github.com/forthebadge/forthebadge/discussions
+    about: Ask questions and get help from the community

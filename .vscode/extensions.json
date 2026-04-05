@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "antfu.iconify",
+        "ms-vscode.vscode-typescript-next",
+        "nuxtr.nuxt-vscode-extentions",
+        "nuxtr.nuxtr-vscode",
+        "vscode-icons-team.vscode-icons",
+        "vue.volar"
+    ]
+}

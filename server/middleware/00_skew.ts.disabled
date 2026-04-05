@@ -1,0 +1,11 @@
+import { isClientOutdated } from "nuxt-skew-protection/server";
+
+import { createProblem } from "../utils/problem";
+
+export default defineEventHandler(async (event) =>
+{
+    if (isClientOutdated(event))
+    {
+        return createProblem(event, 409, "Client is out-of-date");
+    }
+});
