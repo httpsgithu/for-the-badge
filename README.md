@@ -1,9 +1,9 @@
 # For the Badge
 
-[![Built with Nuxt](https://img.shields.io/badge/Built%20with-Nuxt-00DC82?style=flat-square&logo=nuxt.js)](https://nuxt.com)
-[![Deployed on Cloudflare](https://img.shields.io/badge/Deployed%20on-Cloudflare-F38020?style=flat-square&logo=cloudflare)](https://workers.cloudflare.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Open Collective](https://img.shields.io/badge/Open%20Collective-Support%20Us-7FADF2?style=flat-square&logo=opencollective)](https://opencollective.com/forthebadge)
+[![Built with Nuxt](https://forthebadge.com/api/badges/generate?primaryLabel=BUILT%20WITH&secondaryLabel=NUXT&primaryBGColor=%2331C4F3&secondaryBGColor=%2300DC82)](https://nuxt.com)
+[![Deployed on Cloudflare](https://forthebadge.com/api/badges/generate?primaryLabel=DEPLOYED%20ON&secondaryLabel=CLOUDFLARE&primaryBGColor=%23F38020&secondaryBGColor=%23E16A10)](https://workers.cloudflare.com)
+[![License: MIT](https://forthebadge.com/api/badges/generate?primaryLabel=LICENSE&secondaryLabel=MIT&primaryBGColor=%23F0C419&secondaryBGColor=%23D4A017)](https://opensource.org/licenses/MIT)
+[![Open Collective](https://forthebadge.com/api/badges/generate?primaryLabel=OPEN%20COLLECTIVE&secondaryLabel=SUPPORT%20US&primaryBGColor=%237FADF2&secondaryBGColor=%235D8ED8)](https://opencollective.com/forthebadge)
 
 **Badges for badges' sake.**
 

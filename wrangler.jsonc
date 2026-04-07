@@ -18,7 +18,7 @@
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_id": "YOUR_D1_DATABASE_ID"
+			"database_id": "47a2370e-9763-4e37-956a-7867ef1a847b"
 		}
 	],
 	// Create your KV namespace: wrangler kv:namespace create KV
@@ -26,7 +26,7 @@
 	"kv_namespaces": [
 		{
 			"binding": "KV",
-			"id": "YOUR_KV_NAMESPACE_ID"
+			"id": "b9b5490dbe4f47db96d3047735dd7069"
 		}
 	],
 	// Configure your custom domain (optional)

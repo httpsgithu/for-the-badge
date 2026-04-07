@@ -5,7 +5,7 @@
     "author": "For the Badge Contributors",
     "license": "MIT",
     "homepage": "https://forthebadge.com",
-"repository": {
+    "repository": {
         "type": "git",
         "url": "git+https://github.com/forthebadge/for-the-badge.git"
     },
