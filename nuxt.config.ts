@@ -72,6 +72,12 @@ export default defineNuxtConfig(
 
             ["/company/**"]: { prerender: false },
             ["/legal/**"]: { prerender: false },
+            ["/images/badges/**"]: {
+                redirect: {
+                    to: "/badges/**",
+                    statusCode: 301,
+                },
+            },
             ["/api/_auth/**"]: { csurf: false },
             ["/api/feedback"]: { csurf: false },
             ["/api/badges"]: {
