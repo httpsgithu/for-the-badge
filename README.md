@@ -11,7 +11,7 @@
 
 ## Features
 
-- *Custom Badge Creator** - Design badges with custom text, colors, and icons
+- **Custom Badge Creator** - Design badges with custom text, colors, and icons
 - **Pre-made Badges** - Browse a library of ready-to-use badges
 - **User Accounts** - Save and manage your badge collections
 - **Easy Sharing** - Copy badge URLs or download as images
