@@ -7,15 +7,14 @@
 
 **Badges for badges' sake.**
 
-🌐 **Live Site:** [forthebadge.com](https://forthebadge.com)
+  [forthebadge.com](https://forthebadge.com)
 
 ## Features
 
-- 🎨 **Custom Badge Creator** - Design badges with custom text, colors, and icons
-- 📦 **Pre-made Badges** - Browse a library of ready-to-use badges
-- 🏆 **Developer Awards** - Earn and display achievement badges
-- 👤 **User Accounts** - Save and manage your badge collections
-- 🔗 **Easy Sharing** - Copy badge URLs or download as images
+- *Custom Badge Creator** - Design badges with custom text, colors, and icons
+- **Pre-made Badges** - Browse a library of ready-to-use badges
+- **User Accounts** - Save and manage your badge collections
+- **Easy Sharing** - Copy badge URLs or download as images
 
 ## Tech Stack
 
